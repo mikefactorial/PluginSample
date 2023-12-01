@@ -80,19 +80,9 @@
       </Addresses>
     </Publisher>
     <RootComponents>
-      <RootComponent type="80" schemaName="crfce_Accounts" behavior="0" />
       <RootComponent type="91" id="{ff6b0d16-d1ce-4b81-873a-ec6d79a20aba}" schemaName="Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=226b3062f5304b83" behavior="0" />
       <RootComponent type="92" id="{a5191a6b-9290-ee11-8179-000d3a354bf5}" behavior="0" />
     </RootComponents>
-    <MissingDependencies>
-      <MissingDependency>
-        <Required type="61" schemaName="msdyn_/Images/AppModule_Default_Icon.png" displayName="msdyn_/Images/AppModule_Default_Icon.png" solution="AppModuleWebResources (2.5)" />
-        <Dependent type="80" schemaName="crfce_Accounts" displayName="Accounts" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="62" schemaName="crfce_Accounts" solution="Active" />
-        <Dependent type="80" schemaName="crfce_Accounts" displayName="Accounts" />
-      </MissingDependency>
-    </MissingDependencies>
+    <MissingDependencies />
   </SolutionManifest>
 </ImportExportXml>
