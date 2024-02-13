@@ -1,5 +1,5 @@
 # PluginSample
-Simple cdsproj based example of a Dataverse solution with a plugin. 
+Simple cdsproj based example of a Dataverse solution with a plugin. Test
 To build: 
  - Clone the repo and open in VS Code.
  - From a terminal in the cloned repo directory run `dotnet build` to build the plugin source code and the associated solution artifacts.
