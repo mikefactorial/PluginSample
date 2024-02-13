@@ -1,0 +1,26 @@
+name: pr-loop
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: [ "main" ]
+jobs:
+  pr-loop:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: run e2e pipeline test
+        env:
+          AZDO_ORG: ${{ secrets.AZDO_ORG }}
+          AZDO_PROJECT: ${{ secrets.AZDO_PROJECT }}
+          AZDO_REPO: ${{ secrets.AZDO_PROJECT }}
+          PR_LOOP_DATA: ${{ secrets.PR_LOOP_DATA }}
+          AZDO_SVC_CONN_NAME: ${{ secrets.AZDO_SVC_CONN_NAME }}
+          AZDO_SVC_CONN_URL: ${{ secrets.AZDO_SVC_CONN_NAME }}
+          PR_LOOP_EMAIL: ${{ secrets.PR_LOOP_EMAIL }}
+          PR_LOOP_USERNAME: ${{ secrets.PR_LOOP_USERNAME }}
+        run: |
+          . ./.github/workflows/pr-loop.ps1
+          Invoke-EndToEndPipelineTest
+        shell: pwsh
