@@ -7,7 +7,7 @@ function Invoke-EndToEndPipelineTest ($Org, $Pat) {
     $token = [Convert]::ToBase64String($bytes)
     echo $token.EndsWith("=")
     echo $token.Length
-    $headers.Add("Authorization", "Basic :$token")
+    $headers.Add("Authorization", "Basic `:$token")
     $headers.Add("Content-Type", "application/json")
 
     $apiVersion = "?api-version=7.0"
