@@ -18,15 +18,4 @@ function Invoke-EndToEndPipelineTest ($Org, $Pat) {
     foreach ($pipeline in $response.value) {
         Write-Host $pipeline
     }        
-
-    #$body.templateParameters.PipelineId = $pipelineId
-    #$body = ConvertTo-Json -Depth 100 $body -Compress
-    #Write-Host $body
-    #$body = [System.Text.Encoding]::UTF8.GetBytes($body)
-    #$requestUrl = "$org/$project/_apis/pipelines/$pipelineId/runs$apiVersion"
-    #Write-Host $requestUrl
-    #$response = Invoke-RestMethod $requestUrl -Method 'POST' -Headers $headers -Body $body
-    #$response | ConvertTo-Json -Depth 100
-
-    #$id = $response.id
 }
