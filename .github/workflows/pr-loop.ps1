@@ -9,7 +9,7 @@ function Invoke-EndToEndPipelineTest ($Org, $Pat) {
     $headers.Add("Content-Type", "application/json")
 
     $apiVersion = "?api-version=7.0"
-    $requestUrl = "$org/$project/_apis/pipelines$apiVersion"
+    $requestUrl = "$Org/_apis/pipelines$apiVersion"
     $response = Invoke-RestMethod $requestUrl -Method 'GET' -Headers $headers
     $response | ConvertTo-Json -Depth 100
 
