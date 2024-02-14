@@ -4,7 +4,7 @@ function Invoke-EndToEndPipelineTest ($Org, $Pat) {
     #testing
     $headers = New-Object "System.Collections.Generic.Dictionary[[String],[String]]"
 
-    $pair = "$($user):$($Pat)"
+    $pair = ":$($Pat)"
     $encodedCreds = [System.Convert]::ToBase64String([System.Text.Encoding]::ASCII.GetBytes($pair))
     $basicAuthValue = "Basic $encodedCreds"
     $headers.Add("Authorization", $basicAuthValue)
