@@ -5,7 +5,8 @@ function Invoke-EndToEndPipelineTest ($Org, $Pat) {
     $headers = New-Object "System.Collections.Generic.Dictionary[[String],[String]]"
     $bytes = [System.Text.Encoding]::UTF8.GetBytes($Pat)
     $token = [Convert]::ToBase64String($bytes)
-    echo $token
+    echo $token.EndsWith("=")
+    echo $token.Length
     $headers.Add("Authorization", "Basic :$token")
     $headers.Add("Content-Type", "application/json")
 
