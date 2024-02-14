@@ -1,10 +1,10 @@
 function Invoke-EndToEndPipelineTest ($Org, $Pat) {
     #echo  "######" | az devops login --organization https://dev.azure.com/contoso/
-    echo  $Pat | az devops login --organization $Org
+    #echo  $Pat | az devops login --organization $Org
 
     $headers = New-Object "System.Collections.Generic.Dictionary[[String],[String]]"
-    $bytes = [System.Text.Encoding]::Unicode.GetBytes($Pat)
-    $token =[Convert]::ToBase64String($bytes)
+    $bytes = [System.Text.Encoding]::UTF8.GetBytes($Pat)
+    $token = [Convert]::ToBase64String($bytes)
     $headers.Add("Authorization", "Basic :$token")
     $headers.Add("Content-Type", "application/json")
 
