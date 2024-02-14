@@ -3,11 +3,11 @@ function Invoke-EndToEndPipelineTest ($Org, $Pat) {
     #echo  $Pat | az devops login --organization $Org
     #testing
     $headers = New-Object "System.Collections.Generic.Dictionary[[String],[String]]"
-    $bytes = [System.Text.Encoding]::UTF8.GetBytes($Pat)
-    $token = [Convert]::ToBase64String($bytes)
-    echo $token.EndsWith("=")
-    echo $token.Length
-    $headers.Add("Authorization", "Basic `:$token")
+
+    $pair = "$($user):$($Pat)"
+    $encodedCreds = [System.Convert]::ToBase64String([System.Text.Encoding]::ASCII.GetBytes($pair))
+    $basicAuthValue = "Basic $encodedCreds"
+    $headers.Add("Authorization", $basicAuthValue)
     $headers.Add("Content-Type", "application/json")
 
     $apiVersion = "?api-version=7.0"
