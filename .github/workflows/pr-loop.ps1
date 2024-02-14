@@ -18,6 +18,6 @@ function Invoke-EndToEndPipelineTest ($Org, $Pat) {
     $pipelineId = 0;
 
     foreach ($pipeline in $response.value) {
-        Write-Host $pipeline
+        Write-Host "Pipeline: $pipeline"
     }        
 }
